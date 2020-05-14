@@ -24,3 +24,25 @@ jobs:
       with:
         name: snap
         path: ${{ steps.snapcraft.outputs.snap }}
+
+  test:
+    name: Test Snap package
+    needs: [ build ]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: snap
+
+    - name: Install Snap package
+      run: |
+        sudo snap install --classic --dangerous snap/*.snap
+
+    - name: Run to verify commands
+      run: |
+        device-tree-compiler.dtc --version
+        device-tree-compiler.fdtdump --version
+        device-tree-compiler.fdtget --version
+        device-tree-compiler.fdtput --version
