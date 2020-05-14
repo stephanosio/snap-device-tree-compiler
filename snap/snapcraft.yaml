@@ -1,0 +1,40 @@
+name: device-tree-compiler
+version: '1.4.0'
+summary: Device Tree Compiler
+description: |
+  Device Tree Compiler, dtc, takes as input a device-tree in a given format
+  and outputs a device-tree in another format for booting kernels on embedded
+  systems.  Typically, the input format is "dts", a human readable source
+  format, and creates a "dtb", or binary format as output.
+
+grade: stable
+confinement: classic
+base: core18
+
+apps:
+  dtc:
+    command: bin/dtc
+  fdtdump:
+    command: bin/fdtdump
+  fdtget:
+    command: bin/fdtget
+  fdtput:
+    command: bin/fdtput
+
+parts:
+  dtc:
+    plugin: make
+    source: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.4.0.tar.gz
+    build-packages:
+      - bison
+      - flex
+    artifacts:
+      - dtc
+      - fdtdump
+      - fdtget
+      - fdtput
+    organize:
+      dtc: bin/dtc
+      fdtdump: bin/fdtdump
+      fdtget: bin/fdtget
+      fdtput: bin/fdtput
