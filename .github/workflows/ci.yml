@@ -45,4 +45,5 @@ jobs:
         device-tree-compiler.dtc --version
         device-tree-compiler.fdtdump --version
         device-tree-compiler.fdtget --version
+        device-tree-compiler.fdtoverlay --version
         device-tree-compiler.fdtput --version
