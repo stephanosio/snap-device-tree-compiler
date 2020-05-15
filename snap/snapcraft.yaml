@@ -8,20 +8,25 @@ description: |
   format, and creates a "dtb", or binary format as output.
 
 grade: stable
-confinement: classic
+confinement: strict
 base: core18
 
 apps:
   dtc:
     command: bin/dtc
+    plugs: [ home ]
   fdtdump:
     command: bin/fdtdump
+    plugs: [ home ]
   fdtget:
     command: bin/fdtget
+    plugs: [ home ]
   fdtoverlay:
     command: bin/fdtoverlay
+    plugs: [ home ]
   fdtput:
     command: bin/fdtput
+    plugs: [ home ]
 
 parts:
   dtc:
