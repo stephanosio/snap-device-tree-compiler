@@ -42,6 +42,7 @@ jobs:
 
     - name: Run to verify commands
       run: |
+        device-tree-compiler.convert-dtsv0 --version
         device-tree-compiler.dtc --version
         device-tree-compiler.fdtdump --version
         device-tree-compiler.fdtget --version
