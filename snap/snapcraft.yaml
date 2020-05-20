@@ -1,5 +1,5 @@
 name: device-tree-compiler
-version: '1.5.0'
+version: '1.5.1'
 summary: Device Tree Compiler
 description: |
   Device Tree Compiler, dtc, takes as input a device-tree in a given format
@@ -37,7 +37,7 @@ apps:
 parts:
   dtc:
     plugin: make
-    source: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.5.0.tar.gz
+    source: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.5.1.tar.gz
     build-packages:
       - bison
       - flex
