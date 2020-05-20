@@ -12,8 +12,14 @@ confinement: strict
 base: core18
 
 apps:
+  convert-dtsv0:
+    command: bin/convert-dtsv0
+    plugs: [ home ]
   dtc:
     command: bin/dtc
+    plugs: [ home ]
+  dtdiff:
+    command: bin/dtdiff
     plugs: [ home ]
   fdtdump:
     command: bin/fdtdump
@@ -38,14 +44,21 @@ parts:
       - libyaml-dev
       - pkg-config
     artifacts:
+      - convert-dtsv0
       - dtc
+      - dtdiff
       - fdtdump
       - fdtget
       - fdtoverlay
       - fdtput
     organize:
+      convert-dtsv0: bin/convert-dtsv0
       dtc: bin/dtc
+      dtdiff: bin/dtdiff
       fdtdump: bin/fdtdump
       fdtget: bin/fdtget
       fdtoverlay: bin/fdtoverlay
       fdtput: bin/fdtput
+    override-build: |
+      chmod +x dtdiff
+      snapcraftctl build
