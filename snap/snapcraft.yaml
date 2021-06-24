@@ -1,5 +1,5 @@
 name: device-tree-compiler
-version: '1.6.0'
+version: '1.6.1'
 summary: Device Tree Compiler
 description: |
   Device Tree Compiler, dtc, takes as input a device-tree in a given format
@@ -37,7 +37,7 @@ apps:
 parts:
   dtc:
     plugin: make
-    source: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.6.0.tar.gz
+    source: https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.6.1.tar.gz
     build-packages:
       - bison
       - flex
@@ -51,7 +51,7 @@ parts:
       - fdtget
       - fdtoverlay
       - fdtput
-      - libfdt/libfdt-1.6.0.so
+      - libfdt/libfdt-1.6.1.so
       - libfdt/libfdt.so.1
     organize:
       convert-dtsv0: bin/convert-dtsv0
@@ -61,7 +61,7 @@ parts:
       fdtget: bin/fdtget
       fdtoverlay: bin/fdtoverlay
       fdtput: bin/fdtput
-      libfdt/libfdt-1.6.0.so: lib/libfdt-1.6.0.so
+      libfdt/libfdt-1.6.1.so: lib/libfdt-1.6.1.so
       libfdt/libfdt.so.1: lib/libfdt.so.1
     override-prime: |
       snapcraftctl prime
